@@ -1,0 +1,9 @@
+#!/bin/sh
+
+GUNICORN=/var/www/python/puki2redmine/bin/gunicorn
+PROJECT_ROOT=/var/www/python/puki2redmine/pukiwiki2redmine
+
+APP=app:app
+
+cd $PROJECT_ROOT
+exec $GUNICORN -c $PROJECT_ROOT/gunicorn.conf.py $APP
